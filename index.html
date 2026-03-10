@@ -12,36 +12,63 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
     </nav>
 
     <section id="home" class="hero">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Building amazing web experiences</p>
-        <button>Get Started</button>
+        <div class="hero-content">
+            <h1 class="fade-in">Welcome to My Portfolio</h1>
+            <p class="fade-in">Building amazing web experiences with modern technologies</p>
+            <button class="cta-btn">Get Started</button>
+        </div>
     </section>
 
     <section id="about">
         <h2>About Me</h2>
         <p>I'm a passionate web developer creating modern and responsive websites.</p>
+        <div class="social-links">
+            <a href="#" aria-label="GitHub">GitHub</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="Twitter">Twitter</a>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <span class="skill-badge">HTML5</span>
+            <span class="skill-badge">CSS3</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">React</span>
+            <span class="skill-badge">Node.js</span>
+            <span class="skill-badge">Git</span>
+        </div>
     </section>
 
     <section id="projects">
         <h2>Projects</h2>
         <div class="project-grid">
             <div class="project-card">
+                <div class="project-icon">🛒</div>
                 <h3>Project 1</h3>
                 <p>E-commerce platform</p>
+                <a href="#" class="project-link">View Project →</a>
             </div>
             <div class="project-card">
+                <div class="project-icon">📱</div>
                 <h3>Project 2</h3>
                 <p>Social media app</p>
+                <a href="#" class="project-link">View Project →</a>
             </div>
             <div class="project-card">
+                <div class="project-icon">💼</div>
                 <h3>Project 3</h3>
                 <p>Portfolio website</p>
+                <a href="#" class="project-link">View Project →</a>
             </div>
         </div>
     </section>
