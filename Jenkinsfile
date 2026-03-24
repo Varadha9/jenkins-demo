@@ -24,10 +24,17 @@ pipeline {
                 bat 'echo Website deployed to C:\\Deploy'
             }
         }
+        stage('Serve') {
+            steps {
+                bat 'taskkill /F /IM python.exe /T 2>nul || exit 0'
+                bat 'start /B python -m http.server 8000 --directory C:\\Deploy'
+                bat 'echo Server started at http://localhost:8000'
+            }
+        }
     }
 
     post {
-        success { echo 'Website deployed successfully! Open C:\\Deploy\\index.html' }
+        success { echo 'Website live at http://localhost:8000' }
         failure { echo 'Pipeline failed!' }
     }
 }
