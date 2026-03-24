@@ -9,7 +9,6 @@ pipeline {
         }
         stage('Validate') {
             steps {
-                bat 'echo Checking required files...'
                 bat 'if exist index.html (echo index.html found) else (exit 1)'
                 bat 'if exist styles.css (echo styles.css found) else (exit 1)'
                 bat 'if exist script.js (echo script.js found) else (exit 1)'
@@ -21,14 +20,13 @@ pipeline {
                 bat 'copy /Y index.html C:\\Deploy\\index.html'
                 bat 'copy /Y styles.css C:\\Deploy\\styles.css'
                 bat 'copy /Y script.js C:\\Deploy\\script.js'
-                bat 'echo Website deployed to C:\\Deploy'
             }
         }
         stage('Serve') {
             steps {
                 bat 'taskkill /F /IM python.exe /T 2>nul || exit 0'
                 bat 'start /B python -m http.server 8000 --directory C:\\Deploy'
-                bat 'echo Server started at http://localhost:8000'
+                bat 'echo Website is live at http://localhost:8000'
             }
         }
     }
