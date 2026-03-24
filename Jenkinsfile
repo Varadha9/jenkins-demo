@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Serve') {
             steps {
-                bat 'taskkill /F /IM python.exe /T 2>nul || exit 0'
+                bat 'taskkill /F /IM python.exe /T 2>nul & exit 0'
                 bat 'start "WebServer" /MIN python -m http.server 8000 --directory C:\\Deploy'
                 bat 'ping -n 3 127.0.0.1 > nul'
                 bat 'echo Website is live at http://localhost:8000'
