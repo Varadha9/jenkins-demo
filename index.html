@@ -3,89 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Web Portfolio</title>
+    <title>The Arise — Premium Coffee</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <nav>
-        <div class="logo">MyPortfolio</div>
-        <ul>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-logo">☕ The Arise</div>
+        <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        <div class="nav-actions">
+            <button class="cart-btn" onclick="toggleCart()"><i class="fas fa-shopping-bag"></i> <span class="cart-count">0</span></button>
+            <button class="signin-btn" onclick="toggleModal('auth-modal')">Sign In</button>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
     </nav>
 
+    <!-- Hero -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1 class="fade-in">Welcome to My Updated Portfolio</h1>
-            <p class="fade-in">Building amazing web experiences with modern technologies - SSL Fixed!</p>
-            <button class="cta-btn">Get Started</button>
-        </div>
-    </section>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I'm a passionate web developer creating modern and responsive websites.</p>
-        <div class="social-links">
-            <a href="#" aria-label="GitHub">GitHub</a>
-            <a href="#" aria-label="LinkedIn">LinkedIn</a>
-            <a href="#" aria-label="Twitter">Twitter</a>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <span class="skill-badge">HTML5</span>
-            <span class="skill-badge">CSS3</span>
-            <span class="skill-badge">JavaScript</span>
-            <span class="skill-badge">React</span>
-            <span class="skill-badge">Node.js</span>
-            <span class="skill-badge">Git</span>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <div class="project-icon">🛒</div>
-                <h3>Project 1</h3>
-                <p>E-commerce platform</p>
-                <a href="#" class="project-link">View Project →</a>
-            </div>
-            <div class="project-card">
-                <div class="project-icon">📱</div>
-                <h3>Project 2</h3>
-                <p>Social media app</p>
-                <a href="#" class="project-link">View Project →</a>
-            </div>
-            <div class="project-card">
-                <div class="project-icon">💼</div>
-                <h3>Project 3</h3>
-                <p>Portfolio website</p>
-                <a href="#" class="project-link">View Project →</a>
+            <p class="hero-tag">Premium Coffee Experience</p>
+            <h1>Every Sip Tells<br><span>A Story</span></h1>
+            <p class="hero-sub">Handcrafted brews made from the world's finest beans, served with warmth and passion.</p>
+            <div class="hero-btns">
+                <a href="#menu" class="btn-primary">Explore Menu</a>
+                <a href="#about" class="btn-outline">Our Story</a>
             </div>
         </div>
+        <div class="hero-image">
+            <img src="https://i.pinimg.com/474x/ff/c2/50/ffc25038a3901ad6256618eb4d171969.jpg" alt="Premium Coffee">
+        </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <form>
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Message" required></textarea>
-            <button type="submit">Send</button>
+    <!-- Stats -->
+    <div class="stats-bar">
+        <div class="stat"><h3>12+</h3><p>Years of Brewing</p></div>
+        <div class="stat"><h3>50+</h3><p>Signature Blends</p></div>
+        <div class="stat"><h3>10K+</h3><p>Happy Customers</p></div>
+        <div class="stat"><h3>4.9★</h3><p>Average Rating</p></div>
+    </div>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="about-image">
+            <img src="https://i.pinimg.com/474x/58/5c/ce/585cce9194b1a52f5ece00a8951102f3.jpg" alt="Cafe Ambience">
+        </div>
+        <div class="about-content">
+            <p class="section-tag">Our Story</p>
+            <h2>A Haven for Coffee Lovers</h2>
+            <p>Born from a passion for exceptional coffee, The Arise is more than a café — it's a community. We source the finest beans from around the world, roast them with care, and brew each cup to perfection.</p>
+            <p>Whether you're here to work, unwind, or connect — our warm ambiance and expert baristas make every visit memorable.</p>
+            <a href="#menu" class="btn-primary">View Our Menu</a>
+        </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu" class="menu">
+        <div class="section-header">
+            <p class="section-tag">What We Serve</p>
+            <h2>Our Signature Blends</h2>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <div class="menu-img">
+                    <img src="https://i.pinimg.com/474x/6a/86/c3/6a86c387495a30851e5843a582c7b6f2.jpg" alt="Espresso">
+                    <span class="badge">Popular</span>
+                </div>
+                <div class="menu-info">
+                    <h3>Espresso</h3>
+                    <p>Rich and bold single-origin espresso shot.</p>
+                    <div class="menu-footer">
+                        <span class="price">₹199</span>
+                        <button class="add-btn" onclick="addToCart('Espresso', 199)"><i class="fas fa-plus"></i> Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <div class="menu-img">
+                    <img src="https://i.pinimg.com/474x/ba/27/79/ba27796402ffd51ea7382743077175d1.jpg" alt="Americano">
+                </div>
+                <div class="menu-info">
+                    <h3>Americano</h3>
+                    <p>Smooth espresso diluted with hot water.</p>
+                    <div class="menu-footer">
+                        <span class="price">₹229</span>
+                        <button class="add-btn" onclick="addToCart('Americano', 229)"><i class="fas fa-plus"></i> Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <div class="menu-img">
+                    <img src="https://i.pinimg.com/474x/70/d6/a7/70d6a7bac27b6fd90f8880e22cef25ce.jpg" alt="Latte">
+                    <span class="badge">Chef's Pick</span>
+                </div>
+                <div class="menu-info">
+                    <h3>Latte</h3>
+                    <p>Espresso with velvety steamed milk.</p>
+                    <div class="menu-footer">
+                        <span class="price">₹299</span>
+                        <button class="add-btn" onclick="addToCart('Latte', 299)"><i class="fas fa-plus"></i> Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <div class="menu-img">
+                    <img src="https://i.pinimg.com/474x/80/e2/0a/80e20ade3f26efeda7d18959547e23ad.jpg" alt="Cappuccino">
+                </div>
+                <div class="menu-info">
+                    <h3>Cappuccino</h3>
+                    <p>Espresso topped with thick rich foam.</p>
+                    <div class="menu-footer">
+                        <span class="price">₹249</span>
+                        <button class="add-btn" onclick="addToCart('Cappuccino', 249)"><i class="fas fa-plus"></i> Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="section-header">
+            <p class="section-tag">Customer Love</p>
+            <h2>What People Say</h2>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Best coffee experience ever! The ambiance is perfect for working and relaxing."</p>
+                <div class="reviewer"><div class="avatar">P</div><span>Priya S.</span></div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Great ambiance and perfect brews! The latte art is absolutely stunning."</p>
+                <div class="reviewer"><div class="avatar">R</div><span>Rahul M.</span></div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Must-visit for coffee lovers! Every single cup is brewed to perfection."</p>
+                <div class="reviewer"><div class="avatar">A</div><span>Aisha K.</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="contact-info">
+            <p class="section-tag">Get In Touch</p>
+            <h2>Visit Us or Drop a Message</h2>
+            <div class="info-item"><i class="fas fa-map-marker-alt"></i><p>123 Brew Street, Mumbai, India</p></div>
+            <div class="info-item"><i class="fas fa-phone"></i><p>+91 98765 43210</p></div>
+            <div class="info-item"><i class="fas fa-clock"></i><p>Mon–Sun: 7:00 AM – 10:00 PM</p></div>
+            <div class="socials">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <form class="contact-form" onsubmit="submitForm(event)">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
         </form>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 MyPortfolio. All rights reserved.</p>
+        <p>☕ <strong>The Arise</strong> — Brewed with Love</p>
+        <p>&copy; 2025 The Arise Coffee. All Rights Reserved.</p>
     </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-bag"></i> Your Order</h3>
+            <button onclick="toggleCart()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items"><p class="empty-cart">Your cart is empty</p></div>
+        <div class="cart-total">
+            <span>Total:</span><span id="cart-total">₹0</span>
+        </div>
+        <button class="btn-primary checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+
+    <!-- Auth Modal -->
+    <div class="modal-overlay" id="auth-modal" onclick="closeModal(event)">
+        <div class="modal">
+            <button class="modal-close" onclick="toggleModal('auth-modal')"><i class="fas fa-times"></i></button>
+            <div class="modal-tabs">
+                <button class="tab active" onclick="switchTab('login')">Login</button>
+                <button class="tab" onclick="switchTab('register')">Register</button>
+            </div>
+            <form id="login-form" onsubmit="handleAuth(event, 'login')">
+                <h3>Welcome Back</h3>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn-primary">Login</button>
+            </form>
+            <form id="register-form" style="display:none" onsubmit="handleAuth(event, 'register')">
+                <h3>Create Account</h3>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn-primary">Register</button>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
